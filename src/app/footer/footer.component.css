@@ -1,0 +1,5 @@
+.footer {
+  display: grid;
+  position: fixed;
+  bottom: 0;
+}

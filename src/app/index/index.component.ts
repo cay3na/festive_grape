@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import {Component} from '@angular/core';
+import {PostmanService} from "../services/postman.service";
+import {waitForAsync} from "@angular/core/testing";
 
 @Component({
   selector: 'app-index',
@@ -7,27 +8,16 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent {
-  constructor(private http: HttpClient) { }
+  constructor(private postman: PostmanService) {
+  }
 
   ngOnInit(): void {
     console.log("Test")
 
-    setTimeout(() =>{
-      this.http.get("http://localhost:5000/api/v1/index",{
-      responseType: 'json',
-        observe: 'response'
-    }).subscribe(
 
-      (response: any) => {
-        console.log("response in header-component: " + JSON.stringify(response));
-      }, // If ok
+    this.postman.GETRequest("/index", false).subscribe(
+      (response: any) => { console.log("Parsed response: " + response.body.message) }
+    )
 
-      (error: any) => {
-        console.log("Something went wrong...");
-        console.log(error);
-      }, // If not
-
-      () => console.log("")) // Default?);
-  }, 5000)
   }
 }

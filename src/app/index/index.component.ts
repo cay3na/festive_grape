@@ -15,7 +15,6 @@ export class IndexComponent {
     setTimeout(() =>{
       this.http.get("http://localhost:5000/api/v1/index",{
       responseType: 'json',
-        withCredentials: true,
         observe: 'response'
     }).subscribe(
 

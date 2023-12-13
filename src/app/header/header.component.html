@@ -1,4 +1,31 @@
 <div class="header">
-  <h1>Festive Grape</h1>
-  <a href="">About</a>
+
+  <div class="menu">
+
+    <button mat-icon-button="menu" [matMenuTriggerFor]="menu" class="menu">
+      <mat-icon svgIcon="menu_icon"></mat-icon>
+    </button>
+    <mat-menu #menu=matMenu>
+      <button mat-menu-item [matMenuTriggerFor]="collection">Collection</button>
+      <button mat-menu-item [matMenuTriggerFor]="typeOfTea">Types of Teas</button>
+    </mat-menu>
+
+    <mat-menu #collection=matMenu>
+      <button mat-menu-item>Classic Collection</button>
+      <button mat-menu-item>Herbal Collection</button>
+    </mat-menu>
+
+    <mat-menu #typeOfTea=matMenu>
+      <button mat-menu-item>Black Tea</button>
+      <button mat-menu-item>Green Tea</button>
+      <button mat-menu-item>Herbal Tea</button>
+      <button mat-menu-item>Flower Tea</button>
+    </mat-menu>
+
+  </div>
+
+  <div class="title">
+    <h2 (click)="goToIndexPage();" class="title">Sentimental Sips</h2>
+  </div>
+
 </div>

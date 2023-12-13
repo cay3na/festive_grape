@@ -1,4 +1,20 @@
 .header {
   display: grid;
-  text-align: center;
+  background-color: rgb(135, 133, 162);
+  grid-template: 4rem / 7% 93%;
 }
+
+.menu {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Great Vibes';
+  font-size: 3.1rem;
+  text-decoration: none black;
+}
+

@@ -2,3 +2,12 @@
   display: grid;
   text-align: center;
 }
+
+.home-bg-image {
+  width: 100%;
+  height: 100%;
+}
+
+.home-grid-item {
+  background-color: bisque;
+}
